@@ -1,0 +1,44 @@
+
+@font-face {
+    font-family: 'BMEULJIRO';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BMEULJIRO.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.head {
+    text-align: center;
+    color : red;
+
+}
+
+.firstlogo {
+    height: 100px;
+    width: auto;
+    background-size: cover;
+    background-image: url(Image/logo1.jpg);
+}
+
+.image1 {
+    height: 300px;
+    background-size: cover;
+    background-image: url(Image/1.jpg);
+}
+
+
+.footer {
+    position: absolute;
+    margin-top: auto;
+    width: 100%;
+    height: 20%;
+    color: darkslategray;
+    text-align: center;
+    font-size: 15px;
+    background-image: url(/img/core-img/pattern.png);
+   
+  }
+  .footerFont {
+  	margin-top: 30px;
+  	font-size: 15px;
+  	color: darkslategray;
+  }

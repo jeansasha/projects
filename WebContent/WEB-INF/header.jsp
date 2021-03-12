@@ -55,7 +55,7 @@
 										<li><a href="#">${Username}</a>님 안녕하세요</li>
 										
 										<li><a href="logout">로그아웃</a></li>
-										<li><a href="mypage">회원정보 수정</a></li>
+										<li><a href="mypage">마이페이지</a></li>
 										<li><a href="boardMain">자유게시판</a></li>
 											
 									</c:otherwise>

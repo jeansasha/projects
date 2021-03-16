@@ -234,6 +234,7 @@ public class BoardDAO {
 	public BoardVO getBoard(int no) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
 		ResultSet rs = null;
 		BoardVO vo = null;
 		int count = 0;
@@ -263,6 +264,17 @@ public class BoardDAO {
 				vo = new BoardVO(b_title, b_contents, b_view, b_date, mem_code, mem_name);
 
 			}
+			
+			
+			String updateSql = "UPDATE BOARD \r\n" + 
+								"SET B_VIEW = B_VIEW+1 \r\n" + 
+								"WHERE B_NO = ?";
+			
+			pstmt2 = conn.prepareStatement(updateSql);
+			pstmt2.setInt(1, no);
+			
+			pstmt2.executeUpdate();
+			
 		} catch (ClassNotFoundException e) {
 			System.out.println("error: 드라이버 로딩 실패 - " + e);
 		} catch (SQLException e) {

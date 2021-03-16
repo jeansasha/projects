@@ -34,31 +34,36 @@
 		<!--게시판글  -->
 		<div class="row">
 			<div class="col-md-12">
-			<table class="table">
-			<tr>
-			<td class="category">DATE</td>
-			<td>${vo.b_date}</td>
-			</tr>
-			<tr>
-			<td>NAME</td>
-			<td>${vo.mem_name}</td>
-			</tr>
-			<tr>
-			<td>CONTENT</td>
-			<td>${vo.b_contents}</td>
-			</tr>
-			</table>
-		
+				<table class="table">
+				<tr>
+				<td class="category">DATE</td>
+				<td>${vo.b_date}</td>
+				</tr>
+				<tr>
+				<td>TITLE</td>
+				<td>${vo.b_title}</td>
+				</tr>
+				<tr>
+				<td>NAME</td>
+				<td>${vo.mem_name}</td>
+				</tr>
+				<tr>
+				<td>CONTENT</td>
+				<td>${vo.b_contents}</td>
+				</tr>
+				</table>
+			</div>
 		</div>
+		
 		<div class="row m-4 divUpdate">
 			<div class="col-md-12" style="text-align: right;">
-
+				<input class="btn btn-outline-secondary" type="button" value="목록" onclick="location.href='/boardMain'" style="width: 80px">
 				<!-- 수정삭제 -->
 				<c:set var="mem_code" value="${vo.mem_code}" />
 				<c:choose>
 					<c:when test="${Usercode == null}">
-						<input class="btn btn-outline-secondary" type="button" value="로그인" onclick="location.href='/login'"
-							style="width: 50px">
+						
+						<input class="btn btn-outline-secondary" type="button" value="로그인" onclick="location.href='/login'" style="width: 80px">
 					</c:when>
 
 					<c:when test="${Usercode == vo.mem_code}">

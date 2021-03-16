@@ -61,17 +61,13 @@ public class BoardService {
 				int b_commview = rs.getInt("b_commview");
 				String mem_name = rs.getString("mem_name");
 				int cmtCount = rs.getInt("CMT_COUNT");
-			
-				
-		
-				
-						
 						
 				BoardView board = new BoardView(num, b_no, b_title, b_date, b_view, b_commview, mem_name, cmtCount);
 
 				list.add(board);
 
 			}
+
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -110,7 +106,7 @@ public class BoardService {
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user = "desr";
 		String pass = "desr";
-
+		// 검색된 게시글의 총 개수 		
 		String sql = "SElECT Count(b_no) COUNT FROM (" + "   SELECT  ROWNUM Num,N.* "
 				+ "   from (SELECT *FROM BOARD where " + field + " LIKE ? ORDER BY  b_DATE desc) N" + "  )";
 
@@ -120,9 +116,7 @@ public class BoardService {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, user, pass);
 			pstmt = conn.prepareStatement(sql);
-
 		
-
 			pstmt.setString(1, "%" + query + "%");
 
 			rs = pstmt.executeQuery();

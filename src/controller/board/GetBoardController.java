@@ -22,6 +22,8 @@ public class GetBoardController extends HttpServlet {
 		int no = Integer.parseInt(request.getParameter("no"));
 
 		BoardVO vo = dao.getBoard(no);
+		
+		vo.setB_contents(vo.getB_contents().replaceAll("\\r", "<br>"));
 
 		request.setAttribute("vo", vo);
 		request.setAttribute("no", no);

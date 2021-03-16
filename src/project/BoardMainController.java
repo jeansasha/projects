@@ -47,6 +47,12 @@ public class BoardMainController extends HttpServlet {
 		int count = service.getBoardCount(field, query);
 
 		request.setAttribute("count", count);
+		
+		System.out.println("f is : " + request.getParameter("f"));
+		System.out.println("q is : " + request.getParameter("q"));
+		System.out.println("p is : " + request.getParameter("p"));
+		
+		System.out.println("11111111111111111111111111111111111111111111111111111");
 
 		request.getRequestDispatcher("/WEB-INF/view/board/boardMain.jsp").forward(request, response);
 	}

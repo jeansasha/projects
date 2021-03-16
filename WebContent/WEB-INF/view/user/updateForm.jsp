@@ -36,6 +36,7 @@
 		<tr>
 		<td class="categoryMem">이름</td>
 		<td><input class="logincss" type="text" value="${Username}" readonly></input></td>
+	
 		</tr>
 		<tr>
 		<td >아이디</td>
@@ -47,7 +48,7 @@
 		</tr>
 		<tr>
 		<th colspan = "2">
-		<div class="alert alert-danger" id = "password-danger">8자리 ~ 12자리로 입력가능하며 공백은 포함될 수 없습니다</div>
+		<div class="alert alert-danger pwdAlert" id = "password-danger">8자리 ~ 12자리로 입력가능하며 공백은 포함될 수 없습니다</div>
 		</th>
 		</tr>
 		<tr>
@@ -82,7 +83,7 @@
 		</div></br>
 		<div style="margin-bottom: 10px">	
 			<!-- 회원탈퇴페이지로 이동 -->
-			<form action="delete.jsp" method="post">
+			<form action="delete" method="post">
 			<input class="loginbutton" type="submit" value="회원탈퇴">
 			</form>
 		</div>

@@ -72,7 +72,7 @@ System.out.println("게시판 넘버:"+no);
 						</tr>
 						<tr>
 							<th class="category">내용</th>
-							<td><textarea class="boardContent"><%=vo.getB_contents()%></textarea></td>
+							<td><textarea class="boardContent" name="update_content"><%=vo.getB_contents()%></textarea></td>
 						</tr>
 					</table>
 				

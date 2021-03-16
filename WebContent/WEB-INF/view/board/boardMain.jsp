@@ -76,8 +76,8 @@
 								<td>${n.mem_name}</td>
 								<td><a href="getBoard?no=${n.b_no}">${n.b_title}</a></td>
 								<td><fmt:formatDate  pattern="yyyy-MM-dd" value="${n.b_date}"></fmt:formatDate></td>
-								<%-- <td>${n.b_view}</td> --%>
-								<td>${n.cmtCount}</td>
+								<td>${n.b_view}</td>
+<%-- 								<td>${n.cmtCount}</td> --%>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -87,35 +87,39 @@
 <!----------------------------------------------페이징------------------------------------------->
 		<c:set var="page" value="${(empty param.p)?1:param.p}"></c:set>
 		
+		<!-- starNum : 첫 페이지그룹 번호 -->
 		<c:set var="startNum" value="${page-(page-1)%5}"></c:set>
-		<c:set var="lastNum"
-			value="${fn:substringBefore(Math.ceil(count/10),'.')}"></c:set>
-
-
-
-<%-- 		<div class="indexer margin-top align-right ">
-			<h3 class="hidden">현재 페이지</h3>
-			<div>
-				<span class="text-orange text-strong">${empty (param.p)?1:param.p }/${lastNum} pages</span>
-			</div>
-		</div> --%>
+		<!-- lastNum : 마지막 페이지 번호 -->
+		<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}"></c:set>
 
 			<div>
 				<ul class="pagination justify-content-center">
 
 					<!-- 이전페이지번호 -->
-					<li class="page-item disabled"><c:if test="${startNum>1}">
-							<a href="?p=${startNum-1}&f=${param.f}&q=${param.q}"
-								class="search-btn">이전</a>
-						</c:if> <c:if test="${startNum<=1}">
-							<span class="btn btn-outline-secondary paging" onclick="alert('이전 페이지가 없습니다.');">이전</span>
-						</c:if></li>
-
+					<li class="page-item disabled">
+						<c:if test="${startNum>1}">
+							<a href="?p=${startNum-1}&f=${param.f}&q=${param.q}" class="btn btn-outline-secondary paging">이전페이지</a>
+						</c:if> 
+						<c:if test="${startNum<=1}">
+							<span class="btn btn-outline-secondary paging" onclick="alert('이전 페이지가 없습니다.');">이전페이지</span>
+						</c:if>
+					</li>
+					
+					<c:set var="loopBreak" value="false" />
 					<c:forEach var="i" begin="0" end="4">
-						<c:if test="${ (startNum) <= lastNum}"></c:if>
-						<li class="page-item">
-						<a class="text-${(page==(startNum+i))?'primary':''}" 
-						 href="?p=${startNum+i}&f=${param.f}&q=${param.q}">${startNum+i}</a></li>
+						<c:if test="${not loopBreak}" >
+							
+							<li class="page-item">
+								<!--  href="?p => ?뒤부터 넘겨줄 파라미터값 -->
+								<a class="text-${(page==(startNum+i))?'primary':''}" href="?p=${startNum+i}&f=${param.f}&q=${param.q}"> ${startNum+i}</a>
+							 </li>
+							 
+							<c:if test="${(startNum+i) >= lastNum}">
+								<c:set var="loopBreak" value="true" />
+							</c:if>
+
+						</c:if>
+
 					</c:forEach>
 
 					<!-- 다음페이지번호 -->
@@ -123,11 +127,10 @@
 							<c:if
 							test="${startNum+4<lastNum}">
 							<!-- test다음엔 조건 23넘어설땐 -->
-							<a href="?p=${startNum+5}&f=${param.f}&q=${param.q}"
-								class="search-btn">다음</a>
+							<a href="?p=${startNum+5}&f=${param.f}&q=${param.q}" class="btn btn-outline-secondary paging">다음페이지</a>
 							</c:if> 
 							<c:if test="${startNum+4>=lastNum}">
-							<span class="btn btn-outline-secondary paging" onclick="alert('다음 페이지가 없습니다.');">다음</span>
+							<span class="btn btn-outline-secondary paging" onclick="alert('다음 페이지가 없습니다.');">다음페이지</span>
 						</c:if></li>
 				</ul>
 			</div>

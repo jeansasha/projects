@@ -16,18 +16,13 @@ import project.MemberVO;
 @WebServlet("/update")
 public class updateController extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
-
 		request.getRequestDispatcher("/WEB-INF/view/user/updateForm.jsp");
-
-		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
 
@@ -54,9 +49,6 @@ public class updateController extends HttpServlet {
 			System.out.println("등록 안됨");
 			
 			request.getRequestDispatcher("/WEB-INF/view/user/updateForm.jsp").forward(request, response);
-
 		}
-
 	}
-
 }

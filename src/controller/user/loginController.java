@@ -19,21 +19,15 @@ import project.MemberVO;
 @WebServlet("/login")
 public class loginController extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
-		
 		request.getRequestDispatcher("/WEB-INF/view/user/loginForm.jsp").forward(request, response);
-
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
 
-	
 		HttpSession session = request.getSession();
 		MemberDAO dao = new MemberDAO();
 
@@ -43,19 +37,19 @@ public class loginController extends HttpServlet {
 		MemberVO vo = dao.login(input_mem_id, input_mem_pwd);
 
 		if (vo == null) {
-			// 아닐시 비번없다뜨는거?
-			System.out.println("체크");
+			// 
+			System.out.println("정보 일치하지 않음");
 
 			request.setAttribute("vo", vo);
 
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
-			out.println("<script>alert(\"정보가 일치하지 않습니다.\"); history.back()</script>" );
-			
-			//request.getRequestDispatcher("/WEB-INF/view/user/loginForm.jsp").forward(request, response);
+			out.println("<script>alert(\"정보가 일치하지 않습니다.\"); history.back()</script>");
+
+			// request.getRequestDispatcher("/WEB-INF/view/user/loginForm.jsp").forward(request, response);
 
 		}
-		/* 세션에 저장 */
+		// 세션에 저장
 		else {
 			session.setAttribute("Userid", input_mem_id);
 			session.setAttribute("Userpwd", input_mem_pwd);
@@ -64,10 +58,9 @@ public class loginController extends HttpServlet {
 			session.setAttribute("Usernum", vo.getMem_num());
 			session.setAttribute("Userrec", vo.getMem_rec());
 
-			/* 로그인 시 메인화면으로 이동 */
+			// 로그인 후 메인화면으로 이동
 
 			request.getRequestDispatcher("/WEB-INF/view/Main.jsp").forward(request, response);
 		}
 	}
-
 }

@@ -52,7 +52,8 @@
 									<c:otherwise>
 										<!-- 로그인 후 -->
 										
-										<li><a href="#">${Username}</a>님 안녕하세요</li>
+										<li><a href="#" style="padding-right: 0px;">${Username}</a>
+										님 안녕하세요</li>
 										
 										<li><a href="logout">로그아웃</a></li>
 										<li><a href="mypage">마이페이지</a></li>

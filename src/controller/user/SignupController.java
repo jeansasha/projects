@@ -11,23 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import project.MemberDAO;
 import project.MemberVO;
 
-/**
- * Servlet implementation class SignupController
- */
+// Servlet implementation class SignupController 
+
 @WebServlet("/signUp")
 public class SignupController extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-
 		request.getRequestDispatcher("/WEB-INF/view/user/signUpForm.jsp").forward(request, response);
-
 	}
 
 	@Override
-		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
 		String mem_name = request.getParameter("mem_name");
@@ -48,8 +43,6 @@ public class SignupController extends HttpServlet {
 			request.setAttribute("vo1", vo);
 
 			request.getRequestDispatcher("/WEB-INF/view/user/signUpForm.jsp").forward(request, response);
-
 		}
-
 	}
 }

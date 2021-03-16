@@ -18,7 +18,6 @@ public class mypageController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		request.getRequestDispatcher("/WEB-INF/view/user/mypageForm.jsp").forward(request, response);
-
 	}
 
 	@Override
@@ -41,9 +40,6 @@ public class mypageController extends HttpServlet {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>alert(\"비밀번호가 일치하지 않습니다.\"); history.back()</script>" );
-			
-
-		
 		}
 
 	}

@@ -81,12 +81,8 @@
 		</div>
 </div>
 
-	<div class="footer text-center" style="margin-top: auto">
-		<div style="margin-top: 60px">
-			<span>
-			YUM YUM | 서울 특별시 구로구 디지털로 29 대륭포스트타워 | 사업자 등록번호: 111-11-1111</span>
-		</div>	
-	</div>
+<!-- footer -->
+<c:import url="/WEB-INF/footer.jsp"></c:import>
 </body>
 
 <script>

@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import project.BoardDAO;
-import project.MemberDAO;
-import project.MemberVO;
+import model.BoardDAO;
+import model.MemberDAO;
+import model.MemberVO;
 
 @WebServlet("/delete")
 public class deleteController extends HttpServlet {

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%@ page import="project.BoardDAO"%>
-<%@ page import="project.BoardVO"%>
+<%@ page import="model.BoardDAO"%>
+<%@ page import="model.BoardVO"%>
 <%@ page import="java.util.List"%>
 
 
@@ -87,12 +87,10 @@ System.out.println("게시판 넘버:"+no);
 		
 	</form>
 	</div>
-	<div class="footer text-center" style="margin-top: auto">
-		<div style="margin-top: 60px">
-			<span>
-			YUM YUM | 서울 특별시 구로구 디지털로 29 대륭포스트타워 | 사업자 등록번호: 111-11-1111</span>
-		</div>	
-	</div>
+
+<!-- footer -->
+<c:import url="/WEB-INF/footer.jsp"></c:import>
+
 </body>
 
 </html>

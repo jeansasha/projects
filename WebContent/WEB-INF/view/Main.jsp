@@ -1,13 +1,13 @@
-<%@page import="project.DessertVO"%>
+<%@page import="model.DessertVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="project.RecipesDAO"%>
-<%@ page import="project.RecipesVO"%>
+<%@ page import="model.RecipesDAO"%>
+<%@ page import="model.RecipesVO"%>
 <%@ page import="java.util.List"%>
-<%@ page import= "project.MainVO"%>
-<%@ page import= "project.MainDAO"%>
-<%@ page import= "project.DessertAllVO"%>
+<%@ page import= "model.MainVO"%>
+<%@ page import= "model.MainDAO"%>
+<%@ page import= "model.DessertAllVO"%>
 <%request.setCharacterEncoding("UTF-8");%>
 
 <!DOCTYPE html>
@@ -380,13 +380,9 @@
 		</div>
 	</div>
 	<!-- ##### Catagory Area End ##### -->
+
 <!-- footer -->
-	<div class="footer text-center" style="margin-top: auto">
-		<div style="margin-top: 60px">
-			<span>
-			YUM YUM | 서울 특별시 구로구 디지털로 29 대륭포스트타워 | 사업자 등록번호: 111-11-1111</span>
-		</div>	
-	</div>
+<c:import url="/WEB-INF/footer.jsp"></c:import>
 	
 </body>
 </html>

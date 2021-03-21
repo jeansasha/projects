@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import project.BoardDAO;
-import project.BoardVO;
+import model.BoardDAO;
+import model.BoardVO;
 
 
 @WebServlet("/getBoard")

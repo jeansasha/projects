@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import project.BoardService;
-import project.BoardView;
+import model.BoardService;
+import model.BoardView;
 
 @WebServlet("/boardMain")
 public class BoardMainController extends HttpServlet {

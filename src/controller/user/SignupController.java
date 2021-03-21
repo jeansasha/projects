@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import project.MemberDAO;
-import project.MemberVO;
+import model.MemberDAO;
+import model.MemberVO;
 
 // Servlet implementation class SignupController 
 

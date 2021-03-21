@@ -1,4 +1,4 @@
-package project;
+package model;
 
 public class MainVO {
 	private String main_name1;

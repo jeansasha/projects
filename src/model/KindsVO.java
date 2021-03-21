@@ -1,4 +1,4 @@
-package project;
+package model;
 
 public class KindsVO {
 	private int kinds_code;

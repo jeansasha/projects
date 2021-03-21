@@ -1,4 +1,4 @@
-package project;
+package model;
 
 public class MemberVO {
 	private int virtual1;

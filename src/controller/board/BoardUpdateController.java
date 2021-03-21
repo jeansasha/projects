@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import project.BoardDAO;
+import model.BoardDAO;
 
 @WebServlet("/boardUpdate")
 public class BoardUpdateController extends HttpServlet {

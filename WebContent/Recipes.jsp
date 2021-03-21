@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import= "project.RecipesDAO" %>
-<%@ page import= "project.RecipesVO" %>
+<%@ page import= "model.RecipesDAO" %>
+<%@ page import= "model.RecipesVO" %>
 
 <%RecipesDAO rdao = new RecipesDAO();%>
 
@@ -96,11 +96,9 @@
 			</div>
 			</div>
 
-		<div class="footer text-center" style="margin-top: auto">
-			<p>문의사항 : gunlee1226@gmail.com</p>
-			<P>주소 : 서울 특별시 구로구 디지털로 29 대륭포스트타워 3차</P>
-			<p>11층 1109호 한국직업전문학교</p>
-		</div>
+<!-- footer -->
+<c:import url="/WEB-INF/footer.jsp"></c:import>
+
 </body>
 
 </html>

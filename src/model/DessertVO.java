@@ -1,4 +1,4 @@
-package project;
+package model;
 
 public class DessertVO {
 	private int des_code;

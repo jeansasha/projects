@@ -75,5 +75,8 @@
 
 	</c:if>
 	
+	<!-- footer -->
+<c:import url="/WEB-INF/footer.jsp"></c:import>
+	
 </body>
 </html>

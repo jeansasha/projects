@@ -228,7 +228,6 @@ $(function(){
 });
 ```
 
-jQuery 메소드를 사용하여..
   
  2-6. Controller<br>
  * SignupController.java회원가입)

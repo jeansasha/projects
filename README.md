@@ -6,15 +6,17 @@
  
  2. 구성<br>
   2-1. Database<br>
-  2-2. Model<br>
-  2-3. View<br>
-  2-4. Controller<br>
+  2-2. 컴포넌트 구성<br>
+  2-3. 라이브러리<br>
+  2-4. Model<br>
+  2-5. View<br>
+  2-6. Controller<br>
 
 3. 마치며   
  <hr/>
 
  
-### 1. 프로젝트 소개<br>
+### 1. 프로젝트 소개<br></b>
  1-1. 기능<br>
   * 데이터 수집
     - Python으로 크롤링 및 스크래핑하여 데이터를 DB에 적재
@@ -28,7 +30,7 @@
   
  1-2. 개발환경<br>
   - IDE : Eclipse, Pycharm   
-  - 언어 : Java, Python, html, css, Javascript, JQuery, Jstl, JSP   
+  - 언어 : Java, Python, html, css, Javascript, JSP 
   - DB : Oracle   
   - WAS : Tomcat   
 
@@ -47,7 +49,7 @@
  
  2-3. 라이브러리    
 
-```
+```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -73,14 +75,14 @@
 
 * header 와 footer import<br>
 
-```
+```html
 <c:import url="/WEB-INF/header.jsp"></c:import>
 <c:import url="/WEB-INF/footer.jsp"></c:import>
 ```
 
  2-4. Model<br>
  * MemberDAO.java(회원가입)
-```
+```java
 public int signup(MemberVO vo) { 
 Connection conn = null;
 PreparedStatement pstmt = null;
@@ -127,7 +129,8 @@ return count;
  
  2-5. View<br>
  * signUp.jsp(회원가입)
- ```
+ 
+ ```jsp
  <form action="signUp" method="post" >
   <div>
   <h5>회원가입</h5>
@@ -162,7 +165,7 @@ return count;
   
  
 * 정규표현식 사용하여 유효성 검사
-```
+```javascript
 //이름 공식
 var reg1 = /^[가-힣a-zA-Z]{2,}$/;
 //아이디 공식
@@ -231,7 +234,7 @@ $(function(){
   
  2-6. Controller<br>
  * SignupController.java회원가입)
- ```
+ ```java
 @WebServlet("/signUp")
 public class SignupController extends HttpServlet {
 
